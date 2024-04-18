@@ -33,6 +33,7 @@
     "Derek Lee <derek.lee@kurtosistech.com>"
   ],
   "dependencies": {
+    "dotenv": "^16.4.5",
     "typescript": "^5.4.4"
   },
   "engines": {

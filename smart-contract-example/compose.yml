@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  blackjack:
+    image: kurtosis-blackjack
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ETH_HOST: "host.docker.internal"
+      ETH_PORT: "${ETH_PORT}"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: >
+      bash -c "npx hardhat run scripts/deploy.ts --network localnet
+      && npx hardhat test --network localnet"
