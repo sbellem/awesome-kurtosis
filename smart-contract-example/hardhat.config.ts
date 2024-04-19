@@ -34,7 +34,8 @@ export default {
   },
   networks: {
     localnet: {
-      url: `http://${process.env.ETH_HOST}:${process.env.ETH_PORT}`,//TODO: REPLACE <PORT> WITH THE PORT OF A NODE URI PRODUCED BY THE ETH NETWORK KURTOSIS PACKAGE
+	  //TODO: SET env vars WITH THE HOST and PORT OF A NODE URI PRODUCED BY THE ETH NETWORK KURTOSIS PACKAGE
+      url: `http://${process.env.EL_RPC_HOST}:${process.env.EL_RPC_PORT}`,	
       // These are private keys associated with prefunded test accounts created by the eth-network-package
       //https://github.com/kurtosis-tech/ethereum-package/blob/main/src/prelaunch_data_generator/genesis_constants/genesis_constants.star
       accounts: [

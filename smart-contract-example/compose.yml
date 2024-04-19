@@ -7,10 +7,11 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      ETH_HOST: "host.docker.internal"
-      ETH_PORT: "${ETH_PORT}"
+      EL_RPC_HOST: "host.docker.internal"
+      EL_RPC_PORT: "${EL_RPC_PORT}"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     command: >
-      bash -c "npx hardhat run scripts/deploy.ts --network localnet
+      bash -c "npx hardhat balances --network localnet
+      && npx hardhat run scripts/deploy.ts --network localnet
       && npx hardhat test --network localnet"
